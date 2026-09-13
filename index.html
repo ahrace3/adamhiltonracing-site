@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Hilton Racing — 602 Crate Modified Prep, Coaching &amp; Race-Day Support</title>
+<meta name="description" content="Car prep, coaching, and race-day support for Northeast Modified racers. Twenty-plus years specializing in 602 crate modifieds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --asphalt:#1c1a17;
+    --asphalt-2:#26231f;
+    --chalk:#f3efe6;
+    --chalk-2:#e8e1d0;
+    --clay:#a6431f;
+    --clay-dark:#7c3117;
+    --steel:#55524c;
+    --bone:#c9c2b4;
+    --caution:#d9a422;
+    --line: rgba(0,0,0,0.12);
+    --line-dark: rgba(243,239,230,0.14);
+    --radius: 3px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--chalk);
+    color:var(--asphalt);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.wordmark{
+    font-family:'Oswald', sans-serif;
+    line-height:1.05;
+    margin:0;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  p{ margin:0 0 1em; max-width:60ch; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  section{ padding:96px 0; }
+  @media (max-width:640px){
+    section{ padding:64px 0; }
+    .wrap{ padding:0 20px; }
+  }
+
+  /* ---------- placeholder photo blocks ---------- */
+  .photo-slot{
+    border:1.5px dashed var(--steel);
+    border-radius:var(--radius);
+    background:repeating-linear-gradient(135deg, rgba(85,82,76,0.05) 0 10px, transparent 10px 20px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--steel);
+    font-size:0.85rem;
+    padding:24px;
+    min-height:260px;
+  }
+  .photo-slot span{ max-width:22ch; }
+  section.dark .photo-slot{
+    border-color:var(--bone);
+    color:var(--bone);
+    background:repeating-linear-gradient(135deg, rgba(243,239,230,0.05) 0 10px, transparent 10px 20px);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--asphalt);
+    border-bottom:1px solid var(--line-dark);
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  .brand{ color:var(--chalk); text-decoration:none; }
+  .brand .wordmark{ font-size:1.25rem; letter-spacing:0.02em; }
+  .brand .tagline{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-size:0.72rem;
+    color:var(--bone);
+    margin-top:2px;
+  }
+  nav.primary{ display:flex; align-items:center; gap:32px; }
+  nav.primary a{
+    color:var(--bone);
+    text-decoration:none;
+    font-size:0.95rem;
+  }
+  nav.primary a:hover{ color:var(--chalk); }
+  .btn{
+    display:inline-block;
+    padding:11px 22px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-size:0.92rem;
+    font-weight:600;
+    border:1.5px solid transparent;
+    cursor:pointer;
+  }
+  .btn-clay{ background:var(--clay); color:var(--chalk); }
+  .btn-clay:hover{ background:var(--clay-dark); }
+  .btn-outline-dark{ border-color:var(--bone); color:var(--chalk); background:transparent; }
+  .btn-outline-dark:hover{ border-color:var(--chalk); }
+  .btn-outline-light{ border-color:var(--steel); color:var(--asphalt); background:transparent; }
+  .btn-outline-light:hover{ border-color:var(--asphalt); }
+
+  .menu-toggle{
+    display:none;
+    background:none; border:none; color:var(--chalk);
+    font-size:1.6rem; line-height:1; cursor:pointer;
+  }
+  @media (max-width:760px){
+    nav.primary{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--asphalt);
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      border-bottom:1px solid var(--line-dark);
+      display:none;
+    }
+    nav.primary.open{ display:flex; }
+    nav.primary a, nav.primary .btn{
+      width:100%;
+      padding:16px 20px;
+      border-top:1px solid var(--line-dark);
+    }
+    .menu-toggle{ display:block; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--asphalt);
+    color:var(--chalk);
+    padding-top:72px;
+    padding-bottom:96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; }
+  }
+  .hero-stack{
+    font-size:clamp(3.4rem, 8vw, 6.2rem);
+    text-transform:uppercase;
+    color:var(--chalk);
+  }
+  .hero-stack span{
+    display:block;
+    opacity:0;
+    transform:translateY(18px);
+    animation:riseIn 0.65s ease forwards;
+  }
+  .hero-stack span:nth-child(1){ animation-delay:0.05s; }
+  .hero-stack span:nth-child(2){ animation-delay:0.18s; color:var(--clay); }
+  .hero-stack span:nth-child(3){ animation-delay:0.31s; }
+  @keyframes riseIn{ to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion:reduce){
+    .hero-stack span{ animation:none; opacity:1; transform:none; }
+  }
+  .hero-sub{
+    margin-top:28px;
+    font-size:1.08rem;
+    color:var(--bone);
+    max-width:46ch;
+  }
+  .hero-cta{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+  .hero-visual{ position:relative; min-height:320px; }
+  .track-line{ width:100%; height:auto; opacity:0.9; }
+
+  /* ---------- intro strip ---------- */
+  .intro-strip{
+    padding:48px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .intro-strip .wrap{
+    display:flex;
+    align-items:baseline;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .intro-strip .kicker{
+    font-family:'Oswald', sans-serif;
+    font-size:1.05rem;
+    color:var(--clay);
+    white-space:nowrap;
+  }
+  .intro-strip p{ margin:0; color:var(--steel); font-size:1.02rem; }
+
+  /* ---------- services ---------- */
+  .services-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:56px;
+    flex-wrap:wrap;
+  }
+  .services-head h2{ font-size:clamp(2rem,4vw,2.75rem); }
+  .services-head p{ color:var(--steel); margin:0; max-width:40ch; }
+
+  .service-row{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+    padding:36px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .services > .service-row:last-child{ border-bottom:1px solid var(--line); }
+  @media (max-width:700px){
+    .service-row{ grid-template-columns:1fr; gap:14px; }
+  }
+  .service-row h3{ font-size:1.6rem; }
+  .service-row .num{
+    font-family:'Oswald', sans-serif;
+    color:var(--bone-num, var(--steel));
+    opacity:0.45;
+    font-size:0.9rem;
+  }
+  .service-row ul{
+    margin:16px 0 0;
+    padding-left:20px;
+    color:var(--steel);
+  }
+  .service-row li{ margin-bottom:6px; }
+
+  .raceday-steps{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+  }
+  @media (max-width:900px){
+    .raceday-steps{ grid-template-columns:repeat(2,1fr); }
+  }
+  .raceday-steps li{
+    list-style:none;
+    margin:0;
+    padding:16px 14px;
+    background:var(--chalk-2);
+    border-radius:var(--radius);
+  }
+  .raceday-steps .step-num{
+    font-family:'Oswald', sans-serif;
+    color:var(--clay);
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:6px;
+  }
+  .raceday-steps .step-label{ font-size:0.92rem; }
+
+  /* ---------- about ---------- */
+  .about{ background:var(--asphalt); color:var(--chalk); }
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:800px){
+    .about .wrap{ grid-template-columns:1fr; }
+  }
+  .about h2{ font-size:clamp(1.9rem,3.5vw,2.5rem); margin-bottom:20px; }
+  .about p{ color:var(--bone); }
+  .about .credentials{
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--line-dark);
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .about .credentials div{ font-size:0.92rem; color:var(--bone); }
+  .about .credentials strong{
+    display:block;
+    font-family:'Oswald', sans-serif;
+    color:var(--chalk);
+    font-size:1.3rem;
+  }
+
+  /* ---------- contact ---------- */
+  .contact .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+  }
+  @media (max-width:800px){
+    .contact .wrap{ grid-template-columns:1fr; }
+  }
+  .contact h2{ font-size:clamp(2rem,4vw,2.75rem); margin-bottom:16px; }
+  .contact p.lead{ color:var(--steel); }
+  .direct-email{
+    margin-top:28px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .direct-email a{
+    color:var(--clay);
+    font-weight:600;
+    text-decoration:none;
+  }
+  .direct-email a:hover{ text-decoration:underline; }
+
+  form.contact-form label{
+    display:block;
+    font-size:0.85rem;
+    color:var(--steel);
+    margin-bottom:6px;
+    margin-top:18px;
+  }
+  form.contact-form label:first-child{ margin-top:0; }
+  form.contact-form input,
+  form.contact-form textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    font-family:'Inter', sans-serif;
+    font-size:0.98rem;
+    color:var(--asphalt);
+  }
+  form.contact-form input:focus,
+  form.contact-form textarea:focus{
+    outline:2px solid var(--clay);
+    outline-offset:1px;
+  }
+  form.contact-form textarea{ min-height:130px; resize:vertical; }
+  form.contact-form button{ margin-top:24px; }
+  .form-note{
+    margin-top:14px;
+    font-size:0.82rem;
+    color:var(--steel);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--asphalt);
+    color:var(--bone);
+    padding:40px 0;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer .wordmark{ color:var(--chalk); font-size:1.05rem; }
+  footer small{ font-size:0.82rem; }
+
+  :focus-visible{ outline:2px solid var(--clay); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="wordmark">ADAM HILTON RACING</span>
+      <span class="tagline">602 crate modified specialist — Northeast dirt</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="primary" id="primaryNav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-clay">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1 class="hero-stack">
+          <span>Prep it.</span>
+          <span>Scale it.</span>
+          <span>Race it.</span>
+        </h1>
+        <p class="hero-sub">Twenty-plus years building and tuning 602 crate modifieds for racers across the Northeast. Car prep, coaching, and race-night support — so you can focus on the wheel.</p>
+        <div class="hero-cta">
+          <a href="#services" class="btn btn-clay">See what I do</a>
+          <a href="#contact" class="btn btn-outline-dark">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="track-line" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a dirt oval racetrack">
+          <rect x="30" y="40" width="360" height="240" rx="120" fill="none" stroke="#55524c" stroke-width="2"/>
+          <rect x="80" y="90" width="260" height="140" rx="70" fill="none" stroke="#a6431f" stroke-width="3"/>
+          <line x1="210" y1="90" x2="210" y2="40" stroke="#f3efe6" stroke-width="2" stroke-dasharray="4 5"/>
+          <text x="216" y="34" fill="#c9c2b4" font-family="Inter, sans-serif" font-size="11">start / finish</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <section class="intro-strip">
+    <div class="wrap">
+      <span class="kicker">Two decades on the clock.</span>
+      <p>From short-track Saturday nights to championship setups, I've spent my career in the Northeast Modified world — most of it focused on the 602 crate class, where setup wins races more often than horsepower does.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="services-head">
+        <h2>What I do</h2>
+        <p>Three ways I help racers get more out of their car and their night.</p>
+      </div>
+
+      <div class="services">
+        <div class="service-row">
+          <div><span class="num">01</span></div>
+          <div>
+            <h3>Car prep &amp; setup</h3>
+            <p>Your car built and tuned to run right — not just pass tech. I work through chassis setup, shock packages, and 602 rules compliance so you roll off the trailer ready.</p>
+            <ul>
+              <li>Chassis and corner-weight setup</li>
+              <li>Shock selection and packages for your track</li>
+              <li>602 crate rules compliance and tech prep</li>
+              <li>Pre-season and mid-season tune-ups</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div><span class="num">02</span></div>
+          <div>
+            <h3>Coaching &amp; driver development</h3>
+            <p>Speed is a skill. I work with drivers on reading the racetrack, car control, and race craft — in the seat and on film.</p>
+            <ul>
+              <li>Track walk-throughs and line work</li>
+              <li>In-car and race film review</li>
+              <li>Race craft: restarts, traffic, closing laps</li>
+              <li>Season-long development for up-and-coming drivers</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div><span class="num">03</span></div>
+          <div>
+            <h3>Race-day support</h3>
+            <p>Trackside help from hauler to checkered flag, adjusting as the track and the night change.</p>
+            <ul class="raceday-steps">
+              <li><span class="step-num">Morning</span><span class="step-label">Tech &amp; setup check</span></li>
+              <li><span class="step-num">Practice</span><span class="step-label">Hot laps, baseline reads</span></li>
+              <li><span class="step-num">Heats</span><span class="step-label">In-race adjustments</span></li>
+              <li><span class="step-num">Feature</span><span class="step-label">Final setup call</span></li>
+              <li><span class="step-num">After</span><span class="step-label">Debrief &amp; notes for next week</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about dark">
+    <div class="wrap">
+      <div class="photo-slot" aria-hidden="true">
+        <span>Add photo here: images/about-photo.jpg — portrait of Adam, in the shop or at the track</span>
+      </div>
+      <div>
+        <h2>Built in the shop. Proven on the track.</h2>
+        <p>Adam Hilton has spent more than twenty years around Northeast Modified racing — turning wrenches, calling shots, and chasing tenths of a second on tracks across the region. His focus is the 602 crate modified: a spec-engine class where the difference between a top-five and a long night usually comes down to setup, not horsepower.</p>
+        <p>Whether you're building your first crate car or trying to close the gap to the front row, the goal is the same — a car that does what you ask of it, and a driver who knows how to ask.</p>
+        <div class="credentials">
+          <div><strong>20+ yrs</strong>Northeast Modified racing</div>
+          <div><strong>602</strong>crate modified specialty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div>
+        <h2>Let's talk about your car.</h2>
+        <p class="lead">Tell me about your setup, your track, and what you're chasing this season. I'll follow up to figure out where I can help.</p>
+        <div class="direct-email">
+          <p style="margin-bottom:4px; color:var(--steel); font-size:0.9rem;">Prefer email?</p>
+          <a href="mailto:info@adamhiltonracing.com">info@adamhiltonracing.com</a>
+        </div>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="message">What are you looking for help with?</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" class="btn btn-clay">Send message</button>
+        <p class="form-note">This form needs a free Formspree endpoint to go live — see the setup notes that came with this site.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark">ADAM HILTON RACING</span>
+    <small>&copy; 2026 Adam Hilton Racing. Northeast Modified racing — 602 crate specialist.</small>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
