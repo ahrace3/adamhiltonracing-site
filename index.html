@@ -444,27 +444,18 @@
 
   .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
-    grid-auto-rows:140px;
+    grid-template-columns:repeat(3,1fr);
     gap:14px;
   }
   .gallery-grid img{
     width:100%;
-    height:100%;
+    aspect-ratio:4/3;
     object-fit:cover;
     border-radius:var(--radius);
   }
   .gallery-grid li{ list-style:none; }
-  .gallery-grid li:nth-child(1){ grid-column:span 3; grid-row:span 3; }
-  .gallery-grid li:nth-child(2){ grid-column:span 3; grid-row:span 2; }
-  .gallery-grid li:nth-child(3){ grid-column:span 3; grid-row:span 2; }
-  .gallery-grid li:nth-child(4){ grid-column:span 2; grid-row:span 2; }
-  .gallery-grid li:nth-child(5){ grid-column:span 2; grid-row:span 2; }
-  .gallery-grid li:nth-child(6){ grid-column:span 2; grid-row:span 2; }
   @media (max-width:800px){
-    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
-    .gallery-grid li:nth-child(n){ grid-column:span 1; grid-row:span 1; }
-    .gallery-grid li:nth-child(1){ grid-column:span 2; grid-row:span 2; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
   }
 
   /* ---------- contact ---------- */
@@ -743,7 +734,7 @@
           <li><span class="year">2019</span><span class="desc">Ran Outlaw Speedway Modified</span></li>
           <li><span class="year">2020</span><span class="desc">Limited season — ran select races</span></li>
           <li><span class="year">2021</span><span class="desc">3rd in points at Outlaw Speedway (Sportsman/602 Crate), with 3 feature wins; also ran Genesee Speedway part-time</span></li>
-          <li><span class="year">2022</span><span class="desc">Ran Genesee Speedway</span></li>
+          <li><span class="year">2022</span><span class="desc">Ran Modified with the BRP Modified Tour, plus Genesee Speedway</span></li>
           <li><span class="year">2023</span><span class="desc">Genesee Speedway Sportsman champion</span></li>
           <li><span class="year">2024</span><span class="desc">Most recent win, at Freedom Motorsports Park</span></li>
         </ul>
@@ -765,6 +756,9 @@
         <li><img src="images/gallery-4.jpg" alt="Adam Hilton in victory lane after a feature win"></li>
         <li><img src="images/gallery-5.jpg" alt="Adam Hilton celebrating on top of his car with the checkered flag"></li>
         <li><img src="images/gallery-6.jpg" alt="Adam Hilton's No. 1R modified racing at Ransomville Speedway"></li>
+        <li><img src="images/gallery-7.jpg" alt="Adam Hilton's No. 3a modified racing door to door, BRP Modified Tour"></li>
+        <li><img src="images/gallery-8.jpg" alt="Adam Hilton's No. 3a modified racing on dirt, BRP Modified Tour"></li>
+        <li><img src="images/gallery-9.jpg" alt="Adam Hilton's No. 3a modified racing three-wide, BRP Modified Tour"></li>
       </ul>
     </div>
   </section>
