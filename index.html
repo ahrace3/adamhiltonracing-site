@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3A — 602 Crate Modified Prep, Coaching &amp; Race-Day Support</title>
 <meta name="description" content="Car prep, coaching, and race-day support for Northeast Modified racers. Twenty-plus years specializing in 602 crate modifieds.">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -91,7 +94,9 @@
     padding-top:18px;
     padding-bottom:18px;
   }
-  .brand{ color:var(--chalk); text-decoration:none; }
+  .brand{ color:var(--chalk); text-decoration:none; display:flex; align-items:center; gap:12px; }
+  .logo-mark{ width:44px; height:44px; flex-shrink:0; }
+  .brand-text{ display:flex; flex-direction:column; }
   .brand .wordmark{ font-size:1.7rem; letter-spacing:0.03em; }
   .brand .tagline{
     display:block;
@@ -536,6 +541,8 @@
     gap:16px;
   }
   footer .wordmark{ color:var(--chalk); font-size:1.4rem; letter-spacing:0.03em; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+  .footer-brand .logo-mark{ width:32px; height:32px; }
   footer small{ font-size:0.82rem; }
 
   :focus-visible{ outline:2px solid var(--clay); outline-offset:2px; }
@@ -546,8 +553,11 @@
 <header>
   <div class="wrap">
     <a class="brand" href="#top">
-      <span class="wordmark">3A</span>
-      <span class="tagline">Adam Hilton — 602 crate modified specialist, Northeast dirt</span>
+      <img src="images/logo.png" alt="" class="logo-mark">
+      <span class="brand-text">
+        <span class="wordmark">3A</span>
+        <span class="tagline">Adam Hilton — 602 crate modified specialist, Northeast dirt</span>
+      </span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <nav class="primary" id="primaryNav">
@@ -807,7 +817,10 @@
 
 <footer>
   <div class="wrap">
-    <span class="wordmark">3A</span>
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="" class="logo-mark">
+      <span class="wordmark">3A</span>
+    </div>
     <small>&copy; 2026 Adam Hilton. Northeast Modified racing — 602 crate specialist.</small>
   </div>
 </footer>
