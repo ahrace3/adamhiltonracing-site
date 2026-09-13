@@ -193,7 +193,14 @@
   }
   .hero-cta{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
   .hero-visual{ position:relative; min-height:320px; }
-  .track-line{ width:100%; height:auto; opacity:0.9; }
+  .hero-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:var(--radius);
+    aspect-ratio:4/3;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.6);
+  }
 
   /* ---------- intro strip ---------- */
   .intro-strip{
@@ -289,6 +296,11 @@
   @media (max-width:800px){
     .about .wrap{ grid-template-columns:1fr; }
   }
+  .about-photo{
+    width:100%;
+    border-radius:var(--radius);
+    object-fit:cover;
+  }
   .about h2{ font-size:clamp(1.9rem,3.5vw,2.5rem); margin-bottom:20px; }
   .about p{ color:var(--bone); }
   .about .credentials{
@@ -305,6 +317,153 @@
     font-family:'Oswald', sans-serif;
     color:var(--chalk);
     font-size:1.3rem;
+  }
+
+  /* ---------- career / track record ---------- */
+  .career-head{ margin-bottom:40px; }
+  .career-head h2{ font-size:clamp(2rem,4vw,2.75rem); }
+  .career-head p{ color:var(--steel); margin-top:10px; }
+
+  .career-highlight{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    background:var(--asphalt);
+    color:var(--chalk);
+    padding:20px;
+    border-radius:var(--radius);
+    border-left:5px solid var(--clay);
+    margin-bottom:48px;
+    flex-wrap:wrap;
+  }
+  .career-highlight img{
+    width:150px;
+    height:110px;
+    object-fit:cover;
+    border-radius:var(--radius);
+    flex-shrink:0;
+  }
+  .career-highlight-label{
+    font-family:'Oswald', sans-serif;
+    font-size:2.2rem;
+    color:var(--clay);
+    line-height:1;
+  }
+  .career-highlight h3{ font-size:1.15rem; font-weight:500; }
+
+  .career-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    padding-bottom:48px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:48px;
+  }
+  @media (max-width:700px){
+    .career-stats{ grid-template-columns:repeat(2,1fr); }
+  }
+  .career-stats div{ text-align:left; }
+  .career-stats strong{
+    display:block;
+    font-family:'Oswald', sans-serif;
+    font-size:2.4rem;
+    color:var(--clay);
+    line-height:1;
+  }
+  .career-stats span{
+    display:block;
+    margin-top:6px;
+    font-size:0.88rem;
+    color:var(--steel);
+  }
+
+  .track-chips{ margin-bottom:56px; }
+  .track-chips h3, .timeline h3{
+    font-size:1.05rem;
+    font-family:'Oswald', sans-serif;
+    margin-bottom:18px;
+    color:var(--steel);
+  }
+  ul.chips{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  ul.chips li{
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    padding:8px 14px;
+    font-size:0.9rem;
+    color:var(--asphalt);
+    background:var(--chalk-2);
+  }
+  ul.chips li strong{
+    color:var(--clay);
+    font-weight:600;
+  }
+
+  .timeline ul{
+    list-style:none;
+    margin:0; padding:0;
+    border-left:2px solid var(--line);
+  }
+  .timeline li{
+    position:relative;
+    padding:0 0 26px 26px;
+  }
+  .timeline li::before{
+    content:'';
+    position:absolute;
+    left:-6px; top:4px;
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--clay);
+  }
+  .timeline li:last-child{ padding-bottom:0; }
+  .timeline .year{
+    display:block;
+    font-family:'Oswald', sans-serif;
+    font-size:1.05rem;
+    color:var(--asphalt);
+  }
+  .timeline .desc{
+    display:block;
+    color:var(--steel);
+    font-size:0.94rem;
+    margin-top:2px;
+  }
+
+  /* ---------- gallery ---------- */
+  .gallery{ background:var(--asphalt); }
+  .gallery-head{ margin-bottom:40px; }
+  .gallery-head h2{ font-size:clamp(2rem,4vw,2.75rem); color:var(--chalk); }
+  .gallery-head p{ color:var(--bone); margin-top:10px; }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:140px;
+    gap:14px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:var(--radius);
+  }
+  .gallery-grid li{ list-style:none; }
+  .gallery-grid li:nth-child(1){ grid-column:span 3; grid-row:span 3; }
+  .gallery-grid li:nth-child(2){ grid-column:span 3; grid-row:span 2; }
+  .gallery-grid li:nth-child(3){ grid-column:span 3; grid-row:span 2; }
+  .gallery-grid li:nth-child(4){ grid-column:span 2; grid-row:span 2; }
+  .gallery-grid li:nth-child(5){ grid-column:span 2; grid-row:span 2; }
+  .gallery-grid li:nth-child(6){ grid-column:span 2; grid-row:span 2; }
+  @media (max-width:800px){
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
+    .gallery-grid li:nth-child(n){ grid-column:span 1; grid-row:span 1; }
+    .gallery-grid li:nth-child(1){ grid-column:span 2; grid-row:span 2; }
   }
 
   /* ---------- contact ---------- */
@@ -393,6 +552,7 @@
     <nav class="primary" id="primaryNav">
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#career">Track Record</a>
       <a href="#contact">Contact</a>
       <a href="#contact" class="btn btn-clay">Get in touch</a>
     </nav>
@@ -417,12 +577,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <svg class="track-line" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a dirt oval racetrack">
-          <rect x="30" y="40" width="360" height="240" rx="120" fill="none" stroke="#55524c" stroke-width="2"/>
-          <rect x="80" y="90" width="260" height="140" rx="70" fill="none" stroke="#a6431f" stroke-width="3"/>
-          <line x1="210" y1="90" x2="210" y2="40" stroke="#f3efe6" stroke-width="2" stroke-dasharray="4 5"/>
-          <text x="216" y="34" fill="#c9c2b4" font-family="Inter, sans-serif" font-size="11">start / finish</text>
-        </svg>
+        <img src="images/hero-photo.jpg" alt="Adam Hilton's No. 1 modified racing at sunset, Ransomville Speedway" class="hero-photo">
       </div>
     </div>
   </section>
@@ -493,9 +648,7 @@
   <!-- ABOUT -->
   <section id="about" class="about dark">
     <div class="wrap">
-      <div class="photo-slot" aria-hidden="true">
-        <span>Add photo here: images/about-photo.jpg — portrait of Adam, in the shop or at the track</span>
-      </div>
+      <img src="images/about-photo.jpg" alt="Adam Hilton with his No. 3q modified" class="about-photo">
       <div>
         <h2>Built in the shop. Proven on the track.</h2>
         <p>Adam Hilton has spent more than twenty years around Northeast Modified racing — turning wrenches, calling shots, and chasing tenths of a second on tracks across the region. His focus is the 602 crate modified: a spec-engine class where the difference between a top-five and a long night usually comes down to setup, not horsepower.</p>
@@ -505,6 +658,105 @@
           <div><strong>602</strong>crate modified specialty</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section id="career">
+    <div class="wrap">
+      <div class="career-head">
+        <h2>Track record</h2>
+        <p>Twenty-plus years of Saturday nights, from local points races up to a track championship.</p>
+      </div>
+
+      <div class="career-highlight">
+        <img src="images/career-highlight-photo.jpg" alt="Adam Hilton, 2017 Freedom Motorsports Park Modified champion">
+        <div>
+          <span class="career-highlight-label">2017</span>
+          <h3>Freedom Motorsports Park — Modified track champion</h3>
+        </div>
+      </div>
+
+      <div class="career-stats">
+        <div><strong>20+</strong><span>years racing</span></div>
+        <div><strong>28</strong><span>tracks raced</span></div>
+        <div><strong>30</strong><span>feature wins</span></div>
+        <div><strong>14</strong><span>tracks won at</span></div>
+      </div>
+
+      <div class="track-chips">
+        <h3>Tracks raced</h3>
+        <ul class="chips">
+          <li>Weedsport <strong>· 1 win</strong></li>
+          <li>Canandaigua <strong>· 1 win</strong></li>
+          <li>Rolling Wheels Raceway <strong>· 1 win</strong></li>
+          <li>Ransomville</li>
+          <li>Humberstone <strong>· 1 win</strong></li>
+          <li>Merrittville</li>
+          <li>Thunder Mountain NY <strong>· 5 wins</strong></li>
+          <li>Skyline</li>
+          <li>I-88 / Afton</li>
+          <li>Syracuse</li>
+          <li>Oswego</li>
+          <li>Fulton</li>
+          <li>Brockville</li>
+          <li>Cornwall</li>
+          <li>Autodrome Drummond</li>
+          <li>Autodrome Granby</li>
+          <li>Charlotte</li>
+          <li>Freedom <strong>· 2 wins</strong></li>
+          <li>Lernerville <strong>· 5 wins</strong></li>
+          <li>Raceway 7 <strong>· 1 win</strong></li>
+          <li>AMP</li>
+          <li>Sharon <strong>· 2 wins</strong></li>
+          <li>Pittsburgh's PA Motor Speedway <strong>· 1 win</strong></li>
+          <li>Thunder Mountain PA <strong>· 1 win</strong></li>
+          <li>Tri-City <strong>· 1 win</strong></li>
+          <li>Outlaw <strong>· 3 wins</strong></li>
+          <li>Genesee <strong>· 5 wins</strong></li>
+          <li>Mercer</li>
+          <li>Hummingbird</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h3>Year by year</h3>
+        <ul>
+          <li><span class="year">2010</span><span class="desc">4th in points at Rolling Wheels Raceway; 6th–7th in points at Weedsport</span></li>
+          <li><span class="year">2011</span><span class="desc">5th in points at Canandaigua; 9th in the DIRTcar Sportsman Series</span></li>
+          <li><span class="year">2012</span><span class="desc">Ran points at Humberstone Fridays</span></li>
+          <li><span class="year">2013</span><span class="desc">Rolling Wheels Raceway series win; 11th in the Sportsman Series; ran Ransomville Fridays and Humberstone Sundays</span></li>
+          <li><span class="year">2014</span><span class="desc">2nd in points, Rush Modified</span></li>
+          <li><span class="year">2015</span><span class="desc">Ran Rush, Thunder Mountain, and Weedsport</span></li>
+          <li><span class="year">2016</span><span class="desc">Win at Weedsport (RUSH); 6th in points at Weedsport</span></li>
+          <li><span class="year">2017</span><span class="desc">Freedom Motorsports Park Modified track champion</span></li>
+          <li><span class="year">2018</span><span class="desc">Ran Modified at Freedom</span></li>
+          <li><span class="year">2019</span><span class="desc">Ran Outlaw Modified</span></li>
+          <li><span class="year">2020</span><span class="desc">Limited season — ran select races</span></li>
+          <li><span class="year">2021</span><span class="desc">3rd in points, Outlaw Sportsman/Crate</span></li>
+          <li><span class="year">2022</span><span class="desc">Ran Genesee Speedway</span></li>
+          <li><span class="year">2023</span><span class="desc">Genesee Speedway Sportsman champion</span></li>
+          <li><span class="year">2024</span><span class="desc">Most recent win, at Freedom</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="wrap">
+      <div class="gallery-head">
+        <h2>From the track</h2>
+        <p>A few nights that stuck.</p>
+      </div>
+      <ul class="gallery-grid">
+        <li><img src="images/gallery-1.jpg" alt="Adam Hilton's No. 1 modified racing at Ransomville Speedway"></li>
+        <li><img src="images/gallery-4.jpg" alt="Adam Hilton celebrating a Sportsman Shootout Series win"></li>
+        <li><img src="images/gallery-6.jpg" alt="Adam Hilton in victory lane after a feature win"></li>
+        <li><img src="images/gallery-3.jpg" alt="Adam Hilton's modified taking a corner on dirt"></li>
+        <li><img src="images/gallery-5.jpg" alt="Adam Hilton racing three-wide on a dirt track"></li>
+        <li><img src="images/gallery-2.jpg" alt="Adam Hilton celebrating on top of his car with the checkered flag"></li>
+      </ul>
     </div>
   </section>
 
